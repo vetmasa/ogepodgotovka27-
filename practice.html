@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Практика по заданиям 2–12 ОГЭ по русскому языку 2027: по 50 тренировочных заданий на каждое задание с проверкой ответов и сохранением прогресса.">
+  <title>ОГЭ‑2027 · Русский язык · Практика заданий 2–12</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/practice-data.js" defer></script>
+  <script src="assets/app.js" defer></script>
+  <script src="assets/practice.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">ОГЭ</span><span class="brand-name">Русский язык · 2027</span></a>
+    <button class="menu-toggle" aria-expanded="false">Меню</button>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="index.html">Обзор</a>
+      <a href="tasks.html">Задания 2–12</a>
+      <a href="theory.html">Теория</a>
+      <a href="textbooks.html">Учебники</a>
+      <a href="practice.html">Практика</a>
+      <a href="plan.html">План подготовки</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <p class="eyebrow" data-editable data-edit-id="practice-eyebrow">Тренировочный блок</p>
+    <h1 data-editable data-edit-id="practice-title">Практика заданий 2–12</h1>
+    <p class="lead" data-editable data-edit-id="practice-lead">Здесь 11 блоков по 50 заданий — всего 550 вопросов. Выберите номер задания, отвечайте, проверяйте себя и возвращайтесь к ошибкам. Прогресс сохраняется в этом браузере.</p>
+  </div>
+
+  <div class="rule" data-editable data-edit-id="practice-note">
+    <strong>Важно:</strong> это тренировочные задания, составленные по образцу тестовой части ОГЭ. Они не являются официальными материалами ФИПИ. Для разбора формулировок и критериев пользуйтесь страницами <a href="tasks.html">«Задания 2–12»</a> и <a href="theory.html">«Теория»</a>.
+  </div>
+
+  <section class="card" aria-label="Тренажёр по заданиям 2–12">
+    <div class="practice-toolbar">
+      <label for="taskSelect">Задание:</label>
+      <select id="taskSelect">
+        <option value="2">Задание 2 · грамматическая основа</option>
+        <option value="3">Задание 3 · характеристика предложения</option>
+        <option value="4">Задание 4 · пунктуационное правило</option>
+        <option value="5">Задание 5 · знаки под номерами</option>
+        <option value="6">Задание 6 · объяснение написания</option>
+        <option value="7">Задание 7 · буква на месте пропуска</option>
+        <option value="8">Задание 8 · форма слова</option>
+        <option value="9">Задание 9 · замена управления согласованием</option>
+        <option value="10">Задание 10 · соответствие тексту</option>
+        <option value="11">Задание 11 · средство выразительности</option>
+        <option value="12">Задание 12 · фразеологизм</option>
+      </select>
+      <span class="practice-counter" id="qCounter">№ 1 из 50</span>
+    </div>
+
+    <div class="practice-progress"><div class="practice-bar" id="progressBar"></div></div>
+    <p class="practice-stats" id="practiceStats">Отвечено: 0 из 50 · Верно: 0</p>
+
+    <p class="practice-question" id="questionText">Загрузка заданий…</p>
+
+    <div class="practice-options" id="options" role="group" aria-label="Варианты ответа"></div>
+    <p class="practice-hint" id="hintText" hidden></p>
+
+    <div class="practice-controls">
+      <button id="prevBtn" type="button">← Назад</button>
+      <button id="checkBtn" type="button">Проверить</button>
+      <button id="nextBtn" type="button">Далее →</button>
+      <button id="hintBtn" type="button">Подсказка</button>
+      <button id="resetBtn" type="button">Сбросить задание</button>
+    </div>
+
+    <div class="feedback" id="feedback" hidden></div>
+
+    <div class="q-grid" id="qGrid" aria-label="Переход к вопросу"></div>
+  </section>
+
+  <p class="note" data-editable data-edit-id="practice-bottom-note">Ответы можно проверить кнопкой «Проверить»; после проверки правильный вариант выделяется, а подсказка остаётся доступной. Кнопки с номерами внизу показывают, какие вопросы уже решены верно и где были ошибки.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Источники информации</h4>
+        <ul>
+          <li>ФИПИ. Кодификатор, спецификация и демонстрационный вариант ОГЭ по русскому языку, 9 класс, 2027 г. — <a href="https://fipi.ru/oge/demoversii-specifikacii-kodifikatory" target="_blank" rel="noopener">fipi.ru</a></li>
+          <li>ФИПИ. Изменения в КИМ ОГЭ 2027 года. — <a href="https://doc.fipi.ru/oge/demoversii-specifikacii-kodifikatory/2027/Izmeneniya_KIM_OGE_2027.pdf" target="_blank" rel="noopener">doc.fipi.ru</a></li>
+          <li>Открытый банк оценочных средств ФИПИ — <a href="https://oge.fipi.ru/bank/index.php?proj=BD98FF424631BFE24D6010A4B1266CA8" target="_blank" rel="noopener">oge.fipi.ru</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Навигация</h4>
+        <p><a href="tasks.html">Все задания</a> · <a href="theory.html">Теория</a> · <a href="textbooks.html">Учебники</a> · <a href="practice.html">Практика</a> · <a href="plan.html">План подготовки</a></p>
+        <p class="credit">Над сайтом работал Афонькин Виталий, ученик 9 «б» класса, под руководством учителя русского языка Агафоновой Полины Витальевны.</p>
+        <p class="dev-note footer-note">Письменная часть (сжатое изложение и сочинение-рассуждение) — в разработке.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Афонькин Виталий. Все права защищены.</span>
+      <span>ОГЭ‑2027 · Русский язык · 9 класс</span>
+    </div>
+  </div>
+</footer>
+
+<div class="edit-hint">Режим редактирования включён — нажимайте на текст и меняйте его</div>
+<div class="edit-bar" id="editBar" role="toolbar" aria-label="Редактирование страницы">
+  <button id="editToggle" type="button">Редактировать</button>
+  <button id="editSave" type="button">Сохранить</button>
+  <button id="editExport" type="button">Скачать HTML</button>
+  <button id="editReset" type="button">Сбросить</button>
+  <span id="editStatus" class="note" style="align-self:center;min-width:10px"></span>
+</div>
+
+</body>
+</html>
