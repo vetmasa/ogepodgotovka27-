@@ -321,6 +321,7 @@ details[open] summary::after { content: "−"; }
 .practice-controls button:hover,
 .q-btn:hover { background: var(--accent-soft); }
 .practice-controls button:disabled { opacity: .45; cursor: not-allowed; }
+.practice-video-label { font-size: 12px; color: var(--text-muted); align-self: center; }
 .practice-counter { font-size: 13px; color: var(--text-soft); min-width: 70px; text-align: center; }
 .practice-question { font-size: 17px; line-height: 1.6; margin: 0 0 16px; }
 .practice-options { display: grid; gap: 10px; margin-bottom: 16px; }

@@ -5,6 +5,7 @@
   'use strict';
 
   var DATA = window.PRACTICE_DATA;
+  var VIDEO = window.PRACTICE_VIDEO || {};
   var questionText = document.getElementById('questionText');
   if (!DATA || !questionText) return;
 
@@ -21,6 +22,8 @@
   var nextBtn = document.getElementById('nextBtn');
   var checkBtn = document.getElementById('checkBtn');
   var hintBtn = document.getElementById('hintBtn');
+  var videoBtn = document.getElementById('videoBtn');
+  var videoLabel = document.getElementById('videoLabel');
   var resetBtn = document.getElementById('resetBtn');
 
   var currentTask = '2';
@@ -166,6 +169,10 @@
       feedback.className = 'feedback';
     }
 
+    var video = VIDEO[currentTask];
+    if (videoLabel) videoLabel.textContent = video ? video.title : '';
+    if (videoBtn) videoBtn.disabled = !video;
+
     prevBtn.disabled = currentIndex === 0;
     nextBtn.disabled = currentIndex === list.length - 1;
     updateStats();
@@ -216,6 +223,11 @@
 
   hintBtn.addEventListener('click', function () {
     hintText.hidden = !hintText.hidden;
+  });
+
+  if (videoBtn) videoBtn.addEventListener('click', function () {
+    var video = VIDEO[currentTask];
+    if (video && video.url) window.open(video.url, '_blank', 'noopener');
   });
 
   resetBtn.addEventListener('click', function () {
