@@ -7,6 +7,7 @@
   <title>ОГЭ‑2027 · Русский язык · Практика заданий 2–12</title>
   <link rel="stylesheet" href="assets/styles.css">
   <script src="assets/practice-data.js" defer></script>
+  <script src="assets/practice-video.js" defer></script>
   <script src="assets/app.js" defer></script>
   <script src="assets/practice.js" defer></script>
 </head>
@@ -31,7 +32,7 @@
   <div class="page-head">
     <p class="eyebrow" data-editable data-edit-id="practice-eyebrow">Тренировочный блок</p>
     <h1 data-editable data-edit-id="practice-title">Практика заданий 2–12</h1>
-    <p class="lead" data-editable data-edit-id="practice-lead">Здесь 11 блоков по 50 заданий — всего 550 вопросов. Выберите номер задания, отвечайте, проверяйте себя и возвращайтесь к ошибкам. Прогресс сохраняется в этом браузере.</p>
+    <p class="lead" data-editable data-edit-id="practice-lead">Здесь 11 блоков по 50 заданий — всего 550 вопросов повышенной сложности. Выберите номер задания, отвечайте, проверяйте себя и возвращайтесь к ошибкам. К каждой теме прикреплён видеоразбор. Прогресс сохраняется в этом браузере.</p>
   </div>
 
   <div class="rule" data-editable data-edit-id="practice-note">
@@ -70,7 +71,9 @@
       <button id="checkBtn" type="button">Проверить</button>
       <button id="nextBtn" type="button">Далее →</button>
       <button id="hintBtn" type="button">Подсказка</button>
+      <button id="videoBtn" type="button">Видеоразбор</button>
       <button id="resetBtn" type="button">Сбросить задание</button>
+      <span class="practice-video-label" id="videoLabel"></span>
     </div>
 
     <div class="feedback" id="feedback" hidden></div>
@@ -78,7 +81,7 @@
     <div class="q-grid" id="qGrid" aria-label="Переход к вопросу"></div>
   </section>
 
-  <p class="note" data-editable data-edit-id="practice-bottom-note">Ответы можно проверить кнопкой «Проверить»; после проверки правильный вариант выделяется, а подсказка остаётся доступной. Кнопки с номерами внизу показывают, какие вопросы уже решены верно и где были ошибки.</p>
+  <p class="note" data-editable data-edit-id="practice-bottom-note">Ответы можно проверить кнопкой «Проверить»; после проверки правильный вариант выделяется, а подсказка остаётся доступной. Кнопки с номерами внизу показывают, какие вопросы уже решены верно и где были ошибки. Кнопка «Видеоразбор» открывает видеоурок по теме задания. Портал РЭШ приостановлен с 1 июня 2026 года, поэтому используются открытые видеоуроки с рабочими ссылками.</p>
 </main>
 
 <footer class="site-footer">
