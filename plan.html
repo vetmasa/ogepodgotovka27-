@@ -33,48 +33,100 @@
   </div>
 
   <h2 data-editable data-edit-id="plan-h2-weeks">Восемь недель подготовки</h2>
-  <div class="card">
-
-    <div class="step"><div class="step-num">01</div><div>
-      <h3>Неделя 1 · Знакомство с экзаменом</h3>
-      <p data-editable data-edit-id="plan-week1">Прочитайте <a href="index.html">обзор</a> и <a href="tasks.html">разбор заданий 2–12</a>. Выполните задания 2–12 из демоверсии ФИПИ без таймера, чтобы увидеть слабые места. Заведите тетрадь ошибок: записывайте номер задания, свою ошибку и правильное правило.</p>
-    </div></div>
-
-    <div class="step"><div class="step-num">02</div><div>
-      <h3>Неделя 2 · Лексика и выразительность (задания 11, 12)</h3>
-      <p data-editable data-edit-id="plan-week2">Повторите <a href="theory.html#phonetics">лексику и средства выразительности</a>. Составьте словарик тропов и фразеологизмов: метафора, сравнение, олицетворение, эпитет, гипербола, фразеологизм. Ежедневно находите по 3–5 примеров в текстах из <a href="tasks.html#task11">заданий 11–12</a> и объясняйте их значение.</p>
-    </div></div>
-
-    <div class="step"><div class="step-num">03</div><div>
-      <h3>Неделя 3 · Синтаксис (задания 2, 3, 9)</h3>
-      <p data-editable data-edit-id="plan-week3">Повторите <a href="theory.html#syntax">грамматическую основу, типы предложений и виды связи</a>. По 10–15 заданий в день на поиск основ и характеристику предложений. Для задания 9 тренируйте замену «управление → согласование».</p>
-    </div></div>
-
-    <div class="step"><div class="step-num">04</div><div>
-      <h3>Неделя 4 · Пунктуация (задания 4, 5)</h3>
-      <p data-editable data-edit-id="plan-week4">Составьте таблицу правил из <a href="theory.html#punctuation">справочника</a> и решайте задания на соответствие правила и примера. В задании 5 тренируйтесь расставлять знаки, а потом выписывать только цифры.</p>
-    </div></div>
-
-    <div class="step"><div class="step-num">05</div><div>
-      <h3>Неделя 5 · Орфография и нормы (задания 6, 7, 8)</h3>
-      <p data-editable data-edit-id="plan-week5">Повторите корни, приставки, суффиксы по <a href="theory.html#orthography">таблице</a>. Заведите список «своих» слов, в которых ошибаетесь чаще всего. Задание 8 тренируйте как диктант: записывайте форму слова без подсказки.</p>
-    </div></div>
-
-    <div class="step"><div class="step-num">06</div><div>
-      <h3>Неделя 6 · Анализ текста (задания 10, 11, 12)</h3>
-      <p data-editable data-edit-id="plan-week6">Читайте текст дважды: сначала — о чём он, затем — как устроен. Выписывайте тропы и фразеологизмы в отдельный словарик. Проверяйте каждое утверждение задания 10 конкретным номером предложения.</p>
-    </div></div>
-
-    <div class="step"><div class="step-num">07</div><div>
-      <h3>Неделя 7 · Повторение по учебнику и смешанные задания</h3>
-      <p data-editable data-edit-id="plan-week7">Откройте страницу <a href="textbooks.html">«Учебники»</a>, найдите свой учебник и повторите все темы из таблицы соответствий. Затем решите 3–4 смешанных набора заданий 2–12, чтобы научиться переключаться между синтаксисом, пунктуацией, орфографией и анализом текста.</p>
-    </div></div>
-
-    <div class="step"><div class="step-num">08</div><div>
-      <h3>Неделя 8 · Пробники и повторение</h3>
-      <p data-editable data-edit-id="plan-week8">Решите 2–3 подборки заданий 2–12 за 60–70 минут с переносом ответов в бланк № 1. Разберите все ошибки, вернитесь к тетради ошибок. За день до экзамена — только повторение правил и отдых.</p>
-    </div></div>
-
+  <p class="note" data-editable data-edit-id="plan-weeks-hint">Нажмите на неделю — откроются задания этого этапа. Ссылки ведут сразу к нужному заданию в тренажёре, а галочки выполненного сохраняются в этом браузере.</p>
+  <div class="tabs" data-tabs="plan-weeks">
+    <div class="tab-list" role="tablist" aria-label="Недели подготовки">
+      <button class="tab-btn is-active" type="button" role="tab" aria-selected="true" data-tab="week1">Неделя 1</button>
+      <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="week2">Неделя 2</button>
+      <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="week3">Неделя 3</button>
+      <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="week4">Неделя 4</button>
+      <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="week5">Неделя 5</button>
+      <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="week6">Неделя 6</button>
+      <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="week7">Неделя 7</button>
+      <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="week8">Неделя 8</button>
+    </div>
+    <div class="tab-panels">
+      <section class="tab-panel" data-panel="week1" role="tabpanel">
+        <h3>Неделя 1 · Знакомство с экзаменом</h3>
+        <p data-editable data-edit-id="plan-week1">Прочитайте обзор и разбор заданий 2–12, затем пройдите диагностику без таймера, чтобы увидеть слабые места. Заведите тетрадь ошибок: записывайте номер задания, свою ошибку и правильное правило.</p>
+        <ul class="week-task-list">
+          <li><label><input type="checkbox" data-progress="w1a"> Прочитать <a href="index.html">обзор экзамена</a> и <a href="tasks.html">все задания 2–12</a>.</label></li>
+          <li><label><input type="checkbox" data-progress="w1b"> Решить по 5 заданий в тренажёре: <a href="practice.html?task=2">№ 2</a>, <a href="practice.html?task=3">№ 3</a>.</label></li>
+          <li><label><input type="checkbox" data-progress="w1c"> Открыть <a href="https://fipi.ru/oge/demoversii-specifikacii-kodifikatory" target="_blank" rel="noopener">демоверсию ФИПИ</a> и сверить формулировки заданий.</label></li>
+          <li><label><input type="checkbox" data-progress="w1d"> Записать в тетрадь ошибок первые 3 ошибки и правила к ним.</label></li>
+        </ul>
+      </section>
+      <section class="tab-panel" data-panel="week2" role="tabpanel" hidden>
+        <h3>Неделя 2 · Лексика и выразительность (задания 11, 12)</h3>
+        <p data-editable data-edit-id="plan-week2">Повторите лексику и средства выразительности. Составьте словарик тропов и фразеологизмов: метафора, сравнение, олицетворение, эпитет, гипербола. Ежедневно находите по 3–5 примеров в текстах и объясняйте их значение.</p>
+        <ul class="week-task-list">
+          <li><label><input type="checkbox" data-progress="w2a"> Прочитать <a href="theory.html#phonetics">лексику и тропы в справочнике</a>.</label></li>
+          <li><label><input type="checkbox" data-progress="w2b"> Разобрать формулировки <a href="tasks.html#task11">задания 11</a> и <a href="tasks.html#task12">задания 12</a>.</label></li>
+          <li><label><input type="checkbox" data-progress="w2c"> Решить по 10 заданий: <a href="practice.html?task=11">тренажёр № 11</a>, <a href="practice.html?task=12">тренажёр № 12</a>.</label></li>
+          <li><label><input type="checkbox" data-progress="w2d"> Выписать 10 фразеологизмов и объяснить их значение.</label></li>
+        </ul>
+      </section>
+      <section class="tab-panel" data-panel="week3" role="tabpanel" hidden>
+        <h3>Неделя 3 · Синтаксис (задания 2, 3, 9)</h3>
+        <p data-editable data-edit-id="plan-week3">Повторите грамматическую основу, типы предложений и виды связи. По 10–15 заданий в день на поиск основ и характеристику предложений. Для задания 9 тренируйте замену «управление → согласование».</p>
+        <ul class="week-task-list">
+          <li><label><input type="checkbox" data-progress="w3a"> Повторить <a href="theory.html#syntax">синтаксис в справочнике</a>.</label></li>
+          <li><label><input type="checkbox" data-progress="w3b"> Выполнить <a href="practice.html?task=2">задания № 2</a> на грамматическую основу.</label></li>
+          <li><label><input type="checkbox" data-progress="w3c"> Выполнить <a href="practice.html?task=3">задания № 3</a> на характеристику предложений.</label></li>
+          <li><label><input type="checkbox" data-progress="w3d"> Потренировать <a href="practice.html?task=9">задание № 9</a> на замену словосочетания.</label></li>
+        </ul>
+      </section>
+      <section class="tab-panel" data-panel="week4" role="tabpanel" hidden>
+        <h3>Неделя 4 · Пунктуация (задания 4, 5)</h3>
+        <p data-editable data-edit-id="plan-week4">Составьте таблицу правил и решайте задания на соответствие правила и примера. В задании 5 тренируйтесь расставлять знаки, а потом выписывать только цифры.</p>
+        <ul class="week-task-list">
+          <li><label><input type="checkbox" data-progress="w4a"> Составить таблицу по <a href="theory.html#punctuation">пунктуации</a>.</label></li>
+          <li><label><input type="checkbox" data-progress="w4b"> Разобрать <a href="tasks.html#task4">задание 4</a> и сделать 10 заданий в <a href="practice.html?task=4">тренажёре № 4</a>.</label></li>
+          <li><label><input type="checkbox" data-progress="w4c"> Разобрать <a href="tasks.html#task5">задание 5</a> и сделать 10 заданий в <a href="practice.html?task=5">тренажёре № 5</a>.</label></li>
+          <li><label><input type="checkbox" data-progress="w4d"> Проверить порядок цифр в задании 4 по <a href="index.html">таблице баллов</a>.</label></li>
+        </ul>
+      </section>
+      <section class="tab-panel" data-panel="week5" role="tabpanel" hidden>
+        <h3>Неделя 5 · Орфография и нормы (задания 6, 7, 8)</h3>
+        <p data-editable data-edit-id="plan-week5">Повторите корни, приставки и суффиксы. Заведите список «своих» слов, в которых ошибаетесь чаще всего. Задание 8 тренируйте как диктант: записывайте форму слова без подсказки.</p>
+        <ul class="week-task-list">
+          <li><label><input type="checkbox" data-progress="w5a"> Повторить <a href="theory.html#orthography">орфографию</a> и <a href="theory.html#morphology">морфологию</a>.</label></li>
+          <li><label><input type="checkbox" data-progress="w5b"> Решить 10 заданий <a href="practice.html?task=6">№ 6</a> (объяснение написания).</label></li>
+          <li><label><input type="checkbox" data-progress="w5c"> Решить 10 заданий <a href="practice.html?task=7">№ 7</a> (пропущенные буквы).</label></li>
+          <li><label><input type="checkbox" data-progress="w5d"> Решить 10 заданий <a href="practice.html?task=8">№ 8</a> (форма слова и нормы).</label></li>
+        </ul>
+      </section>
+      <section class="tab-panel" data-panel="week6" role="tabpanel" hidden>
+        <h3>Неделя 6 · Анализ текста (задания 10, 11, 12)</h3>
+        <p data-editable data-edit-id="plan-week6">Читайте текст дважды: сначала — о чём он, затем — как устроен. Выписывайте тропы и фразеологизмы в отдельный словарик. Проверяйте каждое утверждение задания 10 конкретным номером предложения.</p>
+        <ul class="week-task-list">
+          <li><label><input type="checkbox" data-progress="w6a"> Прочитать раздел <a href="theory.html#text">«Анализ текста»</a>.</label></li>
+          <li><label><input type="checkbox" data-progress="w6b"> Проверить 10 утверждений в <a href="practice.html?task=10">тренажёре № 10</a>.</label></li>
+          <li><label><input type="checkbox" data-progress="w6c"> Найти средства выразительности: <a href="practice.html?task=11">№ 11</a>.</label></li>
+          <li><label><input type="checkbox" data-progress="w6d"> Выписать фразеологизмы: <a href="practice.html?task=12">№ 12</a>.</label></li>
+        </ul>
+      </section>
+      <section class="tab-panel" data-panel="week7" role="tabpanel" hidden>
+        <h3>Неделя 7 · Повторение по учебнику и смешанные задания</h3>
+        <p data-editable data-edit-id="plan-week7">Откройте страницу учебников, найдите свой и повторите темы из таблицы соответствий. Затем решите 3–4 смешанных набора заданий 2–12, чтобы научиться переключаться между разделами.</p>
+        <ul class="week-task-list">
+          <li><label><input type="checkbox" data-progress="w7a"> Выбрать свой учебник на странице <a href="textbooks.html">«Учебники»</a> и открыть его.</label></li>
+          <li><label><input type="checkbox" data-progress="w7b"> Повторить 3 темы по таблице соответствий в учебнике.</label></li>
+          <li><label><input type="checkbox" data-progress="w7c"> Решить 20 случайных заданий в <a href="practice.html">общем тренажёре</a>.</label></li>
+          <li><label><input type="checkbox" data-progress="w7d"> Записать в тетрадь ошибок всё, что не получилось с первого раза.</label></li>
+        </ul>
+      </section>
+      <section class="tab-panel" data-panel="week8" role="tabpanel" hidden>
+        <h3>Неделя 8 · Пробники и повторение</h3>
+        <p data-editable data-edit-id="plan-week8">Решите 2–3 подборки заданий 2–12 за 60–70 минут с переносом ответов в бланк № 1. Разберите все ошибки, вернитесь к тетради ошибок. За день до экзамена — только повторение правил и отдых.</p>
+        <ul class="week-task-list">
+          <li><label><input type="checkbox" data-progress="w8a"> Пройти пробник из <a href="practice.html">тренажёра</a> на время (60–70 минут).</label></li>
+          <li><label><input type="checkbox" data-progress="w8b"> Выполнить задания из <a href="https://oge.fipi.ru/bank/index.php?proj=BD98FF424631BFE24D6010A4B1266CA8" target="_blank" rel="noopener">открытого банка ФИПИ</a>.</label></li>
+          <li><label><input type="checkbox" data-progress="w8c"> Проверить <a href="plan.html#checklist">чек-лист готовности</a> ниже.</label></li>
+          <li><label><input type="checkbox" data-progress="w8d"> Ещё раз просмотреть <a href="index.html">таблицу баллов</a> и правила переноса ответов.</label></li>
+        </ul>
+      </section>
+    </div>
   </div>
 
   <h2 data-editable data-edit-id="plan-h2-day">Один день занятий</h2>
@@ -93,7 +145,7 @@
     </div>
   </div>
 
-  <h2 data-editable data-edit-id="plan-h2-checklist">Чек-лист готовности</h2>
+  <h2 id="checklist" data-editable data-edit-id="plan-h2-checklist">Чек-лист готовности</h2>
   <div class="grid grid-2">
     <div class="card">
       <h3>Знания</h3>

@@ -17,6 +17,45 @@
     });
   }
 
+  /* ---------- Переключатель светлой / тёмной темы ---------- */
+  var THEME_KEY = 'oge2027-theme-v1';
+  var rootEl = document.documentElement;
+
+  function storedTheme() {
+    try { return localStorage.getItem(THEME_KEY) === 'light' ? 'light' : 'dark'; }
+    catch (err) { return 'dark'; }
+  }
+
+  function applyTheme(theme) {
+    rootEl.setAttribute('data-theme', theme);
+    var btn = document.querySelector('.theme-toggle');
+    if (!btn) return;
+    var label = theme === 'dark' ? 'Светлая' : 'Тёмная';
+    var hint = theme === 'dark' ? 'Включить светлую тему' : 'Включить тёмную тему';
+    btn.textContent = label;
+    btn.setAttribute('title', hint);
+    btn.setAttribute('aria-label', hint);
+  }
+
+  var headerInner = document.querySelector('.header-inner');
+  if (headerInner && !document.querySelector('.theme-toggle')) {
+    var themeBtn = document.createElement('button');
+    themeBtn.type = 'button';
+    themeBtn.className = 'theme-toggle';
+    headerInner.appendChild(themeBtn);
+    themeBtn.addEventListener('click', function () {
+      var next = storedTheme() === 'dark' ? 'light' : 'dark';
+      try { localStorage.setItem(THEME_KEY, next); } catch (err) {}
+      applyTheme(next);
+    });
+  }
+  applyTheme(storedTheme());
+
+  /* Синхронизация темы между открытыми вкладками */
+  window.addEventListener('storage', function (e) {
+    if (e.key === THEME_KEY || e.key === null) applyTheme(storedTheme());
+  });
+
   /* ---------- Подсветка текущей страницы ---------- */
   var here = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav a').forEach(function (a) {
@@ -47,6 +86,50 @@
       });
     });
   });
+
+  /* ---------- Вкладки (data-tabs / data-tab / data-panel) ---------- */
+  document.querySelectorAll('[data-tabs]').forEach(function (root) {
+    var buttons = root.querySelectorAll('[data-tab]');
+    var panels = root.querySelectorAll('[data-panel]');
+    if (!buttons.length || !panels.length) return;
+
+    function select(name) {
+      buttons.forEach(function (b) {
+        var on = b.getAttribute('data-tab') === name;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      panels.forEach(function (p) {
+        p.hidden = p.getAttribute('data-panel') !== name;
+      });
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { select(b.getAttribute('data-tab')); });
+    });
+    select(buttons[0].getAttribute('data-tab'));
+  });
+
+  /* ---------- Галочки выполнения заданий ---------- */
+  var PROGRESS_KEY = 'oge2027-progress:' + here;
+  var progressBoxes = document.querySelectorAll('[data-progress]');
+  if (progressBoxes.length) {
+    try {
+      var savedProgress = JSON.parse(localStorage.getItem(PROGRESS_KEY) || '{}');
+      progressBoxes.forEach(function (box) {
+        box.checked = !!savedProgress[box.getAttribute('data-progress')];
+      });
+    } catch (err) { /* локальное хранилище может быть недоступно */ }
+    progressBoxes.forEach(function (box) {
+      box.addEventListener('change', function () {
+        var data = {};
+        progressBoxes.forEach(function (item) {
+          data[item.getAttribute('data-progress')] = item.checked;
+        });
+        try { localStorage.setItem(PROGRESS_KEY, JSON.stringify(data)); } catch (err) {}
+      });
+    });
+  }
 
   /* ---------- Режим редактирования ---------- */
   var STORAGE_KEY = 'oge2027-edits-v1';
@@ -110,6 +193,18 @@
   if (exportBtn) exportBtn.addEventListener('click', function () {
     var clone = document.documentElement.cloneNode(true);
     clone.querySelectorAll('[data-editable]').forEach(function (el) { el.removeAttribute('contenteditable'); });
+    clone.querySelectorAll('[data-progress]').forEach(function (box) {
+      if (box.checked) box.setAttribute('checked', 'checked');
+      else box.removeAttribute('checked');
+    });
+    clone.querySelectorAll('[data-tabs] [data-tab]').forEach(function (b) {
+      b.setAttribute('aria-selected', b.classList.contains('is-active') ? 'true' : 'false');
+    });
+    clone.querySelectorAll('[data-panel]').forEach(function (p) {
+      var active = document.querySelector('[data-tab].is-active[data-tab="' + p.getAttribute('data-panel') + '"]');
+      if (active) p.removeAttribute('hidden');
+      else p.setAttribute('hidden', 'hidden');
+    });
     var bar = clone.querySelector('#editBar'); if (bar) bar.remove();
     var hint = clone.querySelector('.edit-hint'); if (hint) hint.remove();
     clone.querySelectorAll('.nav a').forEach(function (a) { a.classList.remove('active'); });
